@@ -1,3 +1,5 @@
+4 вариант
+
 print ('Введите три числа')
 a = int(input())
 b = int(input())
