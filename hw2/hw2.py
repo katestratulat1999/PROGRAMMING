@@ -1,3 +1,4 @@
+#4 вариант
 N = int(input('Введите число:'))
 if N > 0:
     for i in range(N):
