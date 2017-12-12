@@ -1,3 +1,4 @@
+#вар2
 with open('Ozhegov.txt', encoding='utf-8') as f:
     #text = f.read()
     #text = text.split('\n')  
