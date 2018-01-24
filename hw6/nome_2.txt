@@ -1,0 +1,10 @@
+persona
+bambio
+amico
+ragazzo
+ragazza
+ospite
+sorella
+fratello
+medico
+pittore

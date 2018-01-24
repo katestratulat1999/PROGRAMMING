@@ -1,0 +1,10 @@
+giardino
+polizia
+stazione
+negozio
+toilette
+pavimento
+formaggio
+marmellata
+insalata
+bicicletta
