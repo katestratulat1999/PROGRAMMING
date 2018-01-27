@@ -1,0 +1,92 @@
+d = {1: 'one', 2: 'two', 3:'three'}
+#1-ключ\индекс
+#вывести слова с ключом один
+print(d[1])
+#ключами могут быть любые элементы
+d2 = {'one': 1, 'two': 2, 'three': 3}
+print(d2['one'])
+#простой словарь при помощи {}
+empty_dict = {}
+d3 = dict()
+#ключи не могут меняться(это неизменяемые значения). Строка может.  Значение может быть любым, НО ОНО НЕ МОЖЕТ БЫТЬ ИЗМЕНЯЕМЫМ
+
+d5 = {'8a': ['Маша', 'Петя'],
+      '3б': ['Женя', 'Саша'],
+}
+print(d5)
+print('3б', d5['3б'])
+#как добавить новый элемент в словарь?
+
+school = {'8a': ['Маша', 'Петя'],
+      '3б': ['Женя', 'Саша'],
+}
+school ['физрук'] = 'Ольга Олеговна'
+school ['физрук'] = 'Софья Николаевна'
+print(school)
+
+#как совместить 2 словаря? допустим, наши школы объединили
+school2 = {
+    'учитель музыки': 'Алекс Петрович',
+    'учитель физики': 'Алексей Николаевич'
+    }
+#тут объединяем 2 словаря
+school.update(school2)
+print(school)
+
+#как перебирать словарь? как список. for key...
+d = {1: 'H', 2: 'He', 3: 'Li', 4:'Be'}
+
+print('Перебор ключей')
+for key in d:
+    print(key, d[key])
+#d.keys позволяет получить список всех кючей
+keys = list(d.keys())
+
+#перебор значений
+print('Перебор значений')
+for value in d.values():
+    print(value)
+values = list(d.values())
+
+#перебор пар
+print('Перебор пар')
+for key, value in d.items():
+    print(key, value)
+
+
+
+
+#пусть у нас есть словарь
+d = {2: 2, 1: 1}
+
+#порядок вывода значений никогда не будет упорядочен. ВСЁ БУДЕТ ВЫДАВАТЬСЯ СЛУЧАЙНО!!!
+
+
+------------------------------------------------------------------------------------------------------------------
+#решим задачку
+def words_from_file(fname):
+    with open ('112.txt', encoding='utf-8') as f:
+        text = f.read
+    symbols_to_remove = ',:;.!?"()'
+    for s in symbols_to_remove:
+        text = text.replace(s, '')
+    words = text.split()
+    return words
+def words_freq(words):
+    counts = {}
+#чтоб проверить, входит ли слово в словарь...
+    for x in words:
+        if x in counts:
+            counts[x] += 1
+        else:
+            counts[x] = 1
+    len_words = len(words)
+    for k,v in counts.items():
+        counts[k] = v / len_words
+    return counts
+
+    
+#если значения, то пишем counts.values
+words = words_from_file('112.txt')
+freq = words_freq(words)
+print(freq['как'])
