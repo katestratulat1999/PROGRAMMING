@@ -1,5 +1,8 @@
+#вариант4
+
 import random
 
+#Create словарь. Открыть файл в кодировке utf-8.
 def create_dict(fname):
     dict = {}
     with open(fname, encoding="utf-8") as f:
@@ -11,11 +14,13 @@ def create_dict(fname):
         dict[word[1]] = word[0]
     return dict
 
+#Случайный выбор слова из файла.
 def rand_choice(fname):
     a = create_dict(fname)
     keys = list(a.keys())
     return random.choice(keys)
 
+#Заменить буквы на точки.
 def enigma():
     k = ''
     c = ''
