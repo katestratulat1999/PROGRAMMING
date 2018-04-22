@@ -6,31 +6,37 @@ import os
 import re
 
 
-def search():
+# эта функция возвращает именно название файла, без расширения
+def name(filename):
+    match = re.search('(.+)\.', filename)
+    filename = match.group(1)
+    return filename
+
+
+# эта функция подсчитывает количество файлов, название которых состоит только из латинских символов
+def count():
+    c = 0
     file_list = os.listdir()
-    w = []
-    for i,c in enumerate(file_list):
-        res = re.match('[^а-яА-Я0-9]+[.][^а-яА-Я]*', c)
-        if res:
-            a = res.group()
-            w.append(a)
-        else:
-            continue
-    return w
+    for filename in file_list:
+        if os.path.isfile(filename):
+            filename = name(filename)
+            if not re.search('[^A-Za-z]', filename):
+                c += 1
+    return c
 
-def func(w):
-    d = []
-    for i,c in enumerate(w):
-        if c in d[:i]:
-            continue
-        else:
-            d.append(c)
-    return d
 
+# эта функция выводит название всех функций или папок
+def all_names():
+    file_list = os.listdir()
+    for filename in file_list:
+        print(filename, end = '\n')
+
+
+# эта функция главная
 def main():
-    w = search()
-    d = func(w)
-    for i in d:
-        print(i)
-        
-main()
+    print('Количество файлов, название которых состоит только из латинских символов, равно', count())
+    all_names()
+
+
+if __name__ == '__main__':
+   main()
