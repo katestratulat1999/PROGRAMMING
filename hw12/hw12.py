@@ -6,7 +6,7 @@ import os
 import re
 
 
-def poisk():
+def search():
     file_list = os.listdir()
     w = []
     for i,c in enumerate(file_list):
@@ -18,7 +18,7 @@ def poisk():
             continue
     return w
 
-def nineten(w):
+def func(w):
     d = []
     for i,c in enumerate(w):
         if c in d[:i]:
@@ -28,8 +28,8 @@ def nineten(w):
     return d
 
 def main():
-    w = poisk()
-    d = nineten(w)
+    w = search()
+    d = func(w)
     for i in d:
         print(i)
         
