@@ -1,3 +1,5 @@
+#вариант7
+
 import os
 import re
 
